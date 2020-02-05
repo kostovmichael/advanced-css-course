@@ -14,15 +14,19 @@ Dark green: #28b485
 
 */
 
+html{
+    font-size: 10px;
+}
+
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    /* font-size: 16px; */
     line-height: 1.7;
     color: #777;
     
     /* body paddings is applied around the entire page */
-    padding: 30px;
+    padding: 3rem;
 }
 
 .header {
@@ -55,8 +59,8 @@ body {
 
 .logo-box {
     position: absolute;
-    top:40px;
-    left: 40px;
+    top:4rem;
+    left: 4rem;
 
     cursor: pointer;
 }
@@ -64,7 +68,7 @@ body {
 
 .logo {
     /* specify either the width or height, the other element is controller by the browser */
-    height: 35px;
+    height: 3.5rem;
     /* prevents elements shaking during animation */
     backface-visibility: hidden;
 }
@@ -96,14 +100,14 @@ body {
 
     /* prevents elements shaking during animation */
     backface-visibility: hidden;
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 
 .heading-primary-main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
     animation-name: moveInLeft;
     animation-duration: 1.5s;
     animation-delay: 0s;
@@ -112,9 +116,9 @@ body {
 }
 .heading-primary-sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.74rem;
 
     animation-name: moveInRight;
     animation-duration: 1.5s;
@@ -125,10 +129,10 @@ body {
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translate(-100px);
+        transform: translate(-10rem);
     }
     80%  {
-        transform: translate(10px);
+        transform: translate(1rem);
     } 
     100% {
         opacity: 1;
@@ -139,10 +143,10 @@ body {
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translate(100px);
+        transform: translate(10rem);
     }
     80%  {
-        transform: translate(-10px);
+        transform: translate(-1rem);
     } 
     100% {
         opacity: 1;
@@ -153,7 +157,7 @@ body {
 @keyframes moveInBottom {
     0% {
         opacity: 0;
-        transform: translateY(100px)
+        transform: translateY(10rem)
     }
 
     100% {
@@ -202,29 +206,28 @@ body {
 
 
 .btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-0.3rem);
     /* box-shadow: x  y   blur colorOfShadow */
-    box-shadow:    0 10px 20px rgba(0, 0, 0, 0.2) ;
+    box-shadow:    0 1rem 2rem rgba(0, 0, 0, 0.2) ;
 }
 
 /* when clicked */
 .btn:active {
-    transform: translateY(-1px);
+    transform: translateY(-0.1rem);
     /* box-shadow: x  y  blur colorOfShadow */
-    box-shadow:    0 5px 10px rgba(0, 0, 0, 0.2) ;
+    box-shadow:    0 0.5rem 1rem rgba(0, 0, 0, 0.2) ;
 }
 
 .btn:link,
 .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all .2s;
     position: relative;
-
-    
+    font-size: 1.6rem;
 }
 
 .btn-white {
@@ -237,7 +240,7 @@ body {
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     /* make the top and left properties refer to the parent element with position: relative */
     position: absolute;
     top:0;
