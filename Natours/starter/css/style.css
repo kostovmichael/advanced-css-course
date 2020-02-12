@@ -1,272 +1,200 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
 /* test */
 /*
-COLORS:
+COLORS: test
 
 Light green: #7ed56f
 Medium green: #55c57a
 Dark green: #28b485
 
 */
-
-html{
-    font-size: 10px;
-}
+html {
+  font-size: 10px; }
 
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    /* font-size: 16px; */
-    line-height: 1.7;
-    color: #777;
-    
-    /* body paddings is applied around the entire page */
-    padding: 3rem;
-}
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  /* body paddings is applied around the entire page */
+  padding: 3rem; }
 
 .header {
-    height: 95vh;
-    background-image: linear-gradient(
-        to right bottom,
-         rgba(126, 213, 111, 0.8),rgba(40, 180, 133, 0.8)), 
-         url(../img/hero.jpg);
-
-    /*  background-size: cover; will fit the element inside the box  */
-    background-size: cover;
-    background-position: top;
-
-    position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    /* clips the bottom right part of the image (white triangle clipped from bottom right) */
-    /* clip-path: polygon(0 0, 100% 0, 100% 200px, 0 100%); */
-
-    /* testing something: */
-    /* clip-path: polygon(0 0, 0% 0, 100% 250px, 0 99%); */
-
-     /* makes the entire images into a triangle */
-     /* clip-path: polygon(50% 0, 100% 100%, 0 100%); */
-    /*clip-path: polygon(5% 65%, 47% 0%,100% 72%, 0% 72%);*/
-
-
-    /* width: auto;
-    background-position: 20% 40%; */
-}
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  /*  background-size: cover; will fit the element inside the box  */
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* clips the bottom right part of the image (white triangle clipped from bottom right) */
+  /* clip-path: polygon(0 0, 100% 0, 100% 200px, 0 100%); */
+  /* testing something: */
+  /* clip-path: polygon(0 0, 0% 0, 100% 250px, 0 99%); */
+  /* makes the entire images into a triangle */
+  /* clip-path: polygon(50% 0, 100% 100%, 0 100%); */
+  /*clip-path: polygon(5% 65%, 47% 0%,100% 72%, 0% 72%);*/
+  /* width: auto;
+    background-position: 20% 40%; */ }
 
 .logo-box {
-    position: absolute;
-    top:4rem;
-    left: 4rem;
-
-    cursor: pointer;
-}
-
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  cursor: pointer; }
 
 .logo {
-    /* specify either the width or height, the other element is controller by the browser */
-    height: 3.5rem;
-    /* prevents elements shaking during animation */
-    backface-visibility: hidden;
-}
-
-
+  /* specify either the width or height, the other element is controller by the browser */
+  height: 3.5rem;
+  /* prevents elements shaking during animation */
+  backface-visibility: hidden; }
 
 /* centered text box */
 .text-box {
-    /* centers the box*/
-    position: absolute;
-    top: 40%;
-    /* this refers to percentage of the width of the parent element*/
-    left: 50%;
-
-    /* when adding "transform: translate", the box's 
+  /* centers the box*/
+  position: absolute;
+  top: 40%;
+  /* this refers to percentage of the width of the parent element*/
+  left: 50%;
+  /* when adding "transform: translate", the box's 
     left and top percentage become no longer related to the 
     parent elemnet (the header). Without it, the "%" of left and top 
     are calculated from withing the header element */
-    transform: translate(-50%, -50%);
-
-    text-align: center;
-
-}
-
+  transform: translate(-50%, -50%);
+  text-align: center; }
 
 .heading-primary {
-    color: #ffffff;
-    text-transform: uppercase;
-
-    /* prevents elements shaking during animation */
-    backface-visibility: hidden;
-    margin-bottom: 6rem;
-}
+  color: #ffffff;
+  text-transform: uppercase;
+  /* prevents elements shaking during animation */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
 
 .heading-primary-main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1.5s;
-    animation-delay: 0s;
-    animation-timing-function: ease-out; 
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 1.5s;
+  animation-delay: 0s;
+  animation-timing-function: ease-out; }
 
-}
 .heading-primary-sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.74rem;
-
-    animation-name: moveInRight;
-    animation-duration: 1.5s;
-    animation-delay: 0s;
-    animation-timing-function: ease-out; 
-}
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.74rem;
+  animation-name: moveInRight;
+  animation-duration: 1.5s;
+  animation-delay: 0s;
+  animation-timing-function: ease-out; }
 
 @keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translate(-10rem);
-    }
-    80%  {
-        transform: translate(1rem);
-    } 
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translate(-10rem); }
+  80% {
+    transform: translate(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 @keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translate(10rem);
-    }
-    80%  {
-        transform: translate(-1rem);
-    } 
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translate(10rem); }
+  80% {
+    transform: translate(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 @keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(10rem)
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0)
-    }
-}
-
-
+  0% {
+    opacity: 0;
+    transform: translateY(10rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
 
 @keyframes dropFromTop {
-
-    0% {
-        opacity: 0;
-        transform: translate(0, -1000%);
-    }
-
-    65%  {
-        transform: translate(0, 0);
-    } 
-
-    70%  {
-        transform: translate(0, -150%);
-    } 
-
-    75%  {
-        transform: translate(0, -150%);
-    } 
-    85%  {
-        transform: translate(0, -100%);
-    } 
-
-    90%  {
-        transform: translate(0, 0);
-    } 
-
-    95%  {
-        transform: translate(0, -100%);
-    } 
- 
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
+  0% {
+    opacity: 0;
+    transform: translate(0, -1000%); }
+  65% {
+    transform: translate(0, 0); }
+  70% {
+    transform: translate(0, -150%); }
+  75% {
+    transform: translate(0, -150%); }
+  85% {
+    transform: translate(0, -100%); }
+  90% {
+    transform: translate(0, 0); }
+  95% {
+    transform: translate(0, -100%); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 .btn:hover {
-    transform: translateY(-0.3rem);
-    /* box-shadow: x  y   blur colorOfShadow */
-    box-shadow:    0 1rem 2rem rgba(0, 0, 0, 0.2) ;
-}
+  transform: translateY(-0.3rem);
+  /* box-shadow: x  y   blur colorOfShadow */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 /* when clicked */
 .btn:active {
-    transform: translateY(-0.1rem);
-    /* box-shadow: x  y  blur colorOfShadow */
-    box-shadow:    0 0.5rem 1rem rgba(0, 0, 0, 0.2) ;
-}
+  transform: translateY(-0.1rem);
+  /* box-shadow: x  y  blur colorOfShadow */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn:link,
 .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all .2s;
-    position: relative;
-    font-size: 1.6rem;
-}
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem; }
 
 .btn-white {
-    background-color: #fff;
-    color: #777;
-}
+  background-color: #fff;
+  color: #777; }
 
 .btn::after {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    /* make the top and left properties refer to the parent element with position: relative */
-    position: absolute;
-    top:0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  /* make the top and left properties refer to the parent element with position: relative */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
 
-.btn-white::after{
-    background-color: #fff;
-    color: #777;
-}
+.btn-white::after {
+  background-color: #fff;
+  color: #777; }
 
 .btn:hover::after {
-    /* scale increases the size of the element by the number of times passed in the function */
-    transform: scaleX(1.5) scaleY(1.6);
-    /* opacity: 0 adds the ripple effect of fading the element away during transition */
-    opacity: 0;
-}
+  /* scale increases the size of the element by the number of times passed in the function */
+  transform: scaleX(1.5) scaleY(1.6);
+  /* opacity: 0 adds the ripple effect of fading the element away during transition */
+  opacity: 0; }
 
 .btn-animated {
-    animation-name: moveInBottom;
-    animation-duration: 1.5s;
-    animation-delay: .75s;
-    animation-timing-function: ease-out; 
-    animation-fill-mode: backwards;
-
-}
+  animation-name: moveInBottom;
+  animation-duration: 1.5s;
+  animation-delay: .75s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards; }
