@@ -107,7 +107,7 @@ gulp.task('sass', function(){
     return gulp.src(paths.scssFiles, { allowEmpty: true })
       .pipe(sass()) // Using gulp-sass
       .pipe(concat('style.css'))
-      .pipe(gulp.dest('dist/'))
+      .pipe(gulp.dest('css/'))
   });
 
   gulp.task('mincssnano', function(){

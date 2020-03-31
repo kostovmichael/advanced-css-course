@@ -7,7 +7,7 @@
     "compile:sass": "node-sass sass/main.scss css/style.css -w",
     "css": "node-sass sass/main.scss css/style.css -o dist",
     "css:watch": "npm run css && node-sass sass/main.scss css/style.css -wo dist",
-    "build:prod":"gulp prodTask"
+    "build:prod": "gulp prodTask"
   },
   "author": "Mike",
   "license": "ISC",
@@ -22,7 +22,6 @@
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.1",
-    "postcss-cli": "^4.1.1",
-    "run-sequence": "^2.2.1"
+    "postcss-cli": "^4.1.1"
   }
 }
