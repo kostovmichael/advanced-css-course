@@ -64,7 +64,7 @@ const compileStyle = () => { // COMPILE STYLE
   return gulp.src(paths.scssFiles, { allowEmpty: true })
   .pipe(sass()) // Using gulp-sass
   .pipe(concat('style.css'))
-  .pipe(gulp.dest('dist/'))
+  .pipe(gulp.dest('css/'))
 }
 
 
@@ -79,7 +79,7 @@ const minCss = () => { // COMPILE STYLE
   return gulp.src(paths.cssFiles, { allowEmpty: true })
       .pipe(csso()) // Min CSS file
       .pipe(concat('style.min.css'))
-      .pipe(gulp.dest('prod/'))
+      .pipe(gulp.dest('css/'))
 }
 
 
@@ -107,21 +107,21 @@ gulp.task('sass', function(){
     return gulp.src(paths.scssFiles, { allowEmpty: true })
       .pipe(sass()) // Using gulp-sass
       .pipe(concat('style.css'))
-      .pipe(gulp.dest('dist/'))
+      .pipe(gulp.dest('css/'))
   });
 
   gulp.task('mincssnano', function(){
     return gulp.src(paths.cssFiles, { allowEmpty: true })
       .pipe(cssnano()) // Min CSS file
       .pipe(concat('style.min.css'))
-      .pipe(gulp.dest('prod/'))
+      .pipe(gulp.dest('css/'))
   });
 
   gulp.task('mincss', function(){
     return gulp.src(paths.cssFiles, { allowEmpty: true })
       .pipe(csso()) // Min CSS file
       .pipe(concat('style.min.css'))
-      .pipe(gulp.dest('prod/'))
+      .pipe(gulp.dest('css/'))
   });
 
   

@@ -7,6 +7,7 @@ var gulp = require('gulp');
 var del = require('del');
 // Requires the gulp-sass plugin
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 
 //var runSequence = require('run-sequence');
 
@@ -17,46 +18,15 @@ var csso = require('gulp-csso');
 
 var paths = {
     scssFiles: ['sass/**/*.scss', 'sass/**/*.sass'],
-    cssFiles:['dist/**/*.css']
+    cssFiles:['css/**/*.css']
 };
 
 
-  //https://www.npmjs.com/package/run-sequence
 
-  // gulp.task('build-prod', function(callback) {
-  //   return runSequence('clean', 'sass', 'mincss', callback);
-  // });
-
-
-
-
-  // gulp.task('build-prod', function(callback) {
-  //   return runSequence('clean', 'sass', 'mincss', callback);
-  // });
-  // gulp.task('default', ['clean'], function () {
-  //   runSequence(
-  //     'sass',
-  //     'mincss'
-  //   );
-  // });
-
-//gulp.watch('files-to-watch', gulp.series(['tasks', 'to', 'run']));
 
 gulp.task('watch', function(){
   return gulp.watch('sass/**/*.scss', gulp.series(['sass']));//, 'to', 'run']));
 });
-
-
-
-
-//gulp.task('prod', gulp.series(['clean', 'sass', 'mincss']))
-//https://codeburst.io/switching-to-gulp-4-0-271ae63530c0
-
-//NOT WORKING with Gulp >=4.*
-gulp.task('prod', function(){
-  return gulp.series(['clean', 'sass', 'mincss']);
-});
-
 
 
 
@@ -79,7 +49,7 @@ const minCss = () => { // COMPILE STYLE
   return gulp.src(paths.cssFiles, { allowEmpty: true })
       .pipe(csso()) // Min CSS file
       .pipe(concat('style.min.css'))
-      .pipe(gulp.dest('prod/'))
+      .pipe(gulp.dest('css/'))
 }
 
 
@@ -103,25 +73,34 @@ exports.prodTask = prodTask;
 
 
 
-gulp.task('sass', function(){
+// gulp.task('sass', function(){
+//     return gulp.src(paths.scssFiles, { allowEmpty: true })
+//       .pipe(sass()) // Using gulp-sass
+//       .pipe(concat('style.css'))
+//       .pipe(gulp.dest('css/'))
+//   });
+
+  gulp.task('sass', function () {
     return gulp.src(paths.scssFiles, { allowEmpty: true })
-      .pipe(sass()) // Using gulp-sass
+      .pipe(sourcemaps.init({ loadMaps: true }))
+      .pipe(sass().on('error', sass.logError))
       .pipe(concat('style.css'))
-      .pipe(gulp.dest('css/'))
-  });
+      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest('./css'));
+   });
 
   gulp.task('mincssnano', function(){
     return gulp.src(paths.cssFiles, { allowEmpty: true })
       .pipe(cssnano()) // Min CSS file
       .pipe(concat('style.min.css'))
-      .pipe(gulp.dest('prod/'))
+      .pipe(gulp.dest('css/'))
   });
 
   gulp.task('mincss', function(){
     return gulp.src(paths.cssFiles, { allowEmpty: true })
       .pipe(csso()) // Min CSS file
       .pipe(concat('style.min.css'))
-      .pipe(gulp.dest('prod/'))
+      .pipe(gulp.dest('css/'))
   });
 
   
